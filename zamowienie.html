@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Fabryka cukierków</title>
+		<link rel="stylesheet" type="text/css" href="styl10.css"/>
+		
+	</head>
+
+	<body>
+		<section id="jeden">
+			<a href="zamowienie.html">Zamów cukierki</a>
+		</section>
+		<section id="dwa">
+			<a href="index.html"><img src="cukierki2.png" alt="Nasze logo"/></a>
+		</section>
+		
+		<header>
+			<h1>Strefa zamówień</h1>
+		</header>
+		
+		<section id="lewy">
+			Numer kształtu:<br><input type="number" id="ksztalt"/><br>
+			skomponuj swój kolor, podaj RGB:<br>
+			R: <input type="number" id="r"/>
+			G: <input type="number" id="g"/>
+			B: <input type="number" id="b"/>
+			<br><button onclick="skrypt()">Zamówienie</button>
+			<p id="wynik">Twoje zamówienie</p>
+			<button id="kolor">Kolor</button>
+		</section>
+		
+			<script>
+				function skrypt(){
+					var ksztalt = document.getElementById("ksztalt").value;
+					var wynik = document.getElementById("wynik");
+					
+					var tekst = "Twoje zamówienie to cukierek ";
+					
+					var red = document.getElementById("r").value;
+					var green = document.getElementById("g").value;
+					var blue = document.getElementById("b").value;
+					
+					var kolor = document.getElementById("kolor");
+					
+					
+					if(ksztalt == 1){
+						tekst += "cytryna";
+					}
+					else if(ksztalt == 2){
+						tekst += "liść";
+					}
+					else if(ksztalt == 3){
+						tekst += "banan";
+					}
+					else{
+						tekst += "inny";
+					}
+				
+					wynik.innerHTML=tekst;
+					
+					kolor.style.backgroundColor = "rgb("+red+","+green+","+blue+")";
+				}
+		
+			</script>
+		
+		<section id="prawy">
+			<h2>Nasza oferta</h2>
+			<table>
+				<tr>
+					<td>Kształty</td>
+					<td rowspan="2">Możesz zamówić<br> dowolny kolor cukierka</td>
+				</tr>
+				<tr>
+					<td>
+						<ol>
+							<li>cytryna</li>
+							<li>liść</li>
+							<li>banan</li>
+						</ol>
+					</td>
+				</tr>
+			</table>
+		</section>
+		
+		<footer>
+			Autor strony: Bartłomiej Wojtowicz
+		</footer>
+	</body>
+
+
+</html>
